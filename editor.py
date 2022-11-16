@@ -1,4 +1,4 @@
-def persons(data_list):
+def persons(data_lists):
     persons = []
     for iter in data_lists:
         if iter[0].istitle() and iter[1].istitle() and len(iter[2]) == 7 and iter[3]:
@@ -32,9 +32,9 @@ if __name__ == '__main__':
         persons = persons(data_lists)
         emails = email_get(persons)
 
-    with open("task_file.txt", "w") as f:
-       f.write(", ".join(name_of_titles) + "\n")
-       for i, value in enumerate(persons):
-           value.insert(0, emails[i])
-           value = ", ".join(value) + "\n"
-           f.write(value)
+     with open("task_file.txt", "w") as f:
+        f.write(", ".join(name_of_titles) + "\n")
+        for i, value in enumerate(persons):
+            value.insert(0, emails[i])
+            value = ", ".join(value) + "\n"
+            f.write(value)
